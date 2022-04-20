@@ -1,0 +1,9 @@
+svg {
+    height: 20px;
+    cursor: pointer;
+    border: none;
+}
+svg path{
+
+    stroke-width: 25px;
+}

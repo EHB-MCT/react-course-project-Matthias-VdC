@@ -1,0 +1,39 @@
+#nav-cont{
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    background-color: white;
+    z-index: 888;
+}
+
+.nav-section{
+    display: flex;
+    flex-direction: row;
+    margin: 0 12.5px;
+}
+
+#sidenav-button{
+    cursor: pointer;
+    user-select: none;
+    height: 25px;
+}
+
+#nav-logo{
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+}
+
+#nav-logo-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10em;
+}

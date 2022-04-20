@@ -1,0 +1,26 @@
+#body-container{
+    position: relative;
+    margin-top: 50px;
+    min-height: calc(100vh - 50px);
+    height: 100%;
+    width: 100%;
+    transition: .4s ease-in-out;
+    background-color: aliceblue;
+}
+
+#body-content-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-close {
+    margin-left: calc(50px);
+}
+
+.body-open {
+    margin-left: calc(200px);
+}

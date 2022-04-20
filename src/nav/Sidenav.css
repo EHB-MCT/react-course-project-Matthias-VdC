@@ -1,0 +1,42 @@
+#sidenav-cont{
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 1px solid black;
+    height: 100%;
+    transition: .4s ease-in-out;
+    background-color: white;
+}   
+
+.sidenav-open{
+    width: 200px;
+}
+
+.sidenav-close{
+    width: 50px;
+}
+
+.sidenav-section{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 65px;
+}
+
+.sidenav-img{
+    width: 25px;
+    height: 25px;
+    margin-left: 12.5px;
+}
+
+.sidenav-text{
+    display: flex;
+    margin-left: 20px;
+    width:fit-content;
+}

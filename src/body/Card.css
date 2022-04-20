@@ -1,0 +1,21 @@
+.card-container{
+    width: 80%;
+    min-height: 200px;
+    background-color: white;
+    margin: 2em;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: azure;
+    padding: .3em 1em;
+}
+
+.card-body{
+
+}
+
+.card-footer{
+
+}
