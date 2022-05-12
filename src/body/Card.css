@@ -1,15 +1,21 @@
 .card-container{
     width: 80%;
     min-height: 200px;
-    background-color: white;
     margin: 2em;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    max-width: 1200px;
 }
 
 .card-body{
     position: relative;
     padding: .5em 2em;
-    max-height: 600px;
+    max-height: 700px;
     overflow: hidden;
+    background-color: white;
+}
+
+.card-body a {
+    color: #0079D3;
 }
 
 .card-header{
@@ -39,7 +45,7 @@
 .card-body video, .card-body img {
     width: 100%;
     height: 100%;
-    max-height: 500px;
+    max-height: 600px;
     max-width: 700px;
     object-fit: contain;
 }
@@ -49,7 +55,6 @@
     height: 100%;
     margin-right: 1em;
     position: relative;
-    cursor: pointer;
     transition: all .15s ease ;
 }
 
@@ -58,12 +63,71 @@
     width: 2.5em;
     height: auto;
     margin-left: 1em;
-    cursor: pointer;
     transition: all .15s ease ;
 }
 
+.comment-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .15s ease;
+    fill: black;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.comment-icon svg{
+    width: 2.5em;
+    height: auto;
+}
+
+.share-icon{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    transition: all .15s ease;
+    color: black;
+    fill: none;
+    stroke: black;
+    stroke-width: 2.5em;
+}
+
+.share-icon svg {
+    width: 2.4em;
+    height: 2.6em;
+}
+
+.save-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .15s ease;
+    fill: black;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.save-icon svg{
+    width: 2.4em;
+    height: 2.6em;
+}
+
 .up-vote:hover, .down-vote:hover, .open-content-svg:hover{
+    cursor: pointer;
     fill: #0079D3;
+}
+.share-icon:hover{
+    stroke: #0079D3;
+    color: #0079D3;
+    cursor: pointer;
+}
+.comment-icon:hover, .save-icon:hover{
+    stroke: #0079D3;
+    stroke-width: 1px;
+    cursor: pointer;
+    fill: #0079D3;
+    color: #0079D3;
 }
 
 .open-content{
@@ -84,7 +148,6 @@
     height: auto;
     fill: black;
     pointer-events: all;
-    cursor: pointer;
     transition: all .15s ease;
 }
 
@@ -113,7 +176,7 @@
 
 .show-nsfw{
 padding: 1em 1.5em;
-color: black;
+color: white;
 text-decoration: none;
 position: relative;
 overflow: hidden;
