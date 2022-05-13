@@ -11,22 +11,95 @@ export default class Body extends React.Component {
         this.state = {
             data: "",
             dataIsLoaded: false,
+            page: "popular",
         }
+
+        this.fetchNew = this.fetchNew.bind(this);
+        this.filters = this.filters.bind(this);
+        this.fetchTrending = this.fetchTrending.bind(this);
+        this.fetchControversial = this.fetchControversial.bind(this);
+        this.fetchPopular = this.fetchPopular.bind(this);
     }
 
     filters() {
         return (
             <div className="filter-container">
                 <div className="filter-subcontainer">
-                    <p>Popular posts</p>
-                    <p>Hot</p>
-                    <p>Top</p>
-                    <p>All</p>
-                    <p>Trending</p>
-                    <p>Today</p>
+                    {this.state.page === "popular" ? <p class="selected" onClick={this.fetchPopular}>Popular posts</p> : <p class="pointer" onClick={this.fetchPopular}>Popular posts</p>}
+                    {this.state.page === "controversial" ? <p class="selected" onClick={this.fetchControversial}>Controversial</p> : <p class="pointer" onClick={this.fetchControversial}>Controversial</p>}
+                    {this.state.page === "trending" ? <p class="selected" onClick={this.fetchTrending}>Trending</p> : <p class="pointer" onClick={this.fetchTrending}>Trending</p>}
+                    {this.state.page === "new" ? <p class="selected" onClick={this.fetchNew}>New</p> : <p class="pointer" onClick={this.fetchNew}>New</p>}
                 </div>
-            </div>
+            </div >
         );
+    }
+
+    async fetchPopular() {
+        if (this.state.page !== "popular") {
+            this.setState({ data: "" });
+            this.setState({ dataIsLoaded: true });
+            await fetch(`https://www.reddit.com/.json`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        this.setState({ data: data.data.children });
+                        this.setState({ dataIsLoaded: true });
+                        this.setState({ page: "popular" });
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+    }
+
+    async fetchControversial() {
+        if (this.state.page !== "controversial") {
+            this.setState({ data: "" });
+            this.setState({ dataIsLoaded: true });
+            await fetch(`https://www.reddit.com/controversial.json`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        this.setState({ data: data.data.children });
+                        this.setState({ dataIsLoaded: true });
+                        this.setState({ page: "controversial" });
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+    }
+
+    async fetchTrending() {
+        if (this.state.page !== "trending") {
+            this.setState({ data: "" });
+            this.setState({ dataIsLoaded: true });
+            await fetch(`https://www.reddit.com/rising.json`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        this.setState({ data: data.data.children });
+                        this.setState({ dataIsLoaded: true });
+                        this.setState({ page: "trending" });
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+    }
+
+    async fetchNew() {
+        if (this.state.page !== "new") {
+            this.setState({ data: "" });
+            this.setState({ dataIsLoaded: true });
+            await fetch(`https://www.reddit.com/new.json`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        this.setState({ data: data.data.children });
+                        this.setState({ dataIsLoaded: true });
+                        this.setState({ page: "new" });
+                    }
+                })
+                .catch(err => console.log(err));
+        }
     }
 
     createCard() {
@@ -81,7 +154,7 @@ export default class Body extends React.Component {
     render() {
         return (
             <div id="body-container" className={this.props.navState} >
-                <this.filters></this.filters>
+                {this.state.dataIsLoaded ? <this.filters></this.filters> : null}
                 {this.state.dataIsLoaded ? this.createCard() : <div id="loading-body">
                     <div id="loading-circle-1"></div>
                     <div id="loading-circle-2"></div>

@@ -8,9 +8,9 @@
     flex-wrap: nowrap;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid black;
     background-color: white;
-    z-index: 888;
+    z-index: 99999;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .nav-section{
@@ -23,12 +23,16 @@
     cursor: pointer;
     user-select: none;
     height: 25px;
+    pointer-events: all;
+    user-select: none;
 }
 
 #nav-logo{
     width: 100%;
     height: 50px;
     background-size: contain;
+    user-select: none;
+    pointer-events: none;
 }
 
 #nav-logo-button{
@@ -36,4 +40,144 @@
     justify-content: space-between;
     align-items: center;
     width: 10em;
+    pointer-events: none;
 }
+
+#search-bar-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+#search-bar{
+    display: flex;
+    width: 100%;
+    height: 1.8em;
+    font-size: 1.1em;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: rgb(246, 247, 248);
+    padding: 0 1em;
+    color: rgb(90, 90, 90);
+    border: 0.2px solid rgb(224, 224, 224);
+}
+
+#search-bar-container::after{
+    content: url("data:image/svg+xml,%3Csvg width='24px' height='24px' version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 487.95 487.95' fill='white' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 80%;
+    right: -20px;
+    border-radius: 24px;
+    background-color: rgb(255, 69, 0);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+#search-bar-container:hover::after{
+    background-color: rgb(208, 59, 0);
+}
+
+#nav-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 .6em;
+    transition: all .2s ease-in-out;
+    fill: rgb(255, 69, 0);
+}
+
+#nav-profile:hover{
+    fill: rgb(208, 59, 0);
+}
+
+#profile-click{
+    position: fixed;
+    top: 55px;
+    right: 5px;
+    z-index: 999;
+    background-color: white;
+    padding: 0.4em 1em;
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+
+
+
+/* ROUNDED SWITCH taken from: https://www.w3schools.com/howto/howto_css_switch.asp */
+
+
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
+  /* END SOURCE */

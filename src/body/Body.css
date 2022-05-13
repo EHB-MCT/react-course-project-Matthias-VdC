@@ -112,6 +112,29 @@
     margin-left: 1.5em;
 }
 
+.pointer{
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+    padding: .4em 1.2em;
+    border-radius: 16px;
+    transition: .3s all ease-in-out;
+    user-select: none;
+}
+
+.pointer:hover{
+    color: #0079D3;
+    background-color: rgb(200, 200, 200);
+}
+
+.selected{
+    cursor: default;
+    background-color: #0079D3;
+    color: white;
+    padding: .4em 1.2em;
+    border-radius: 16px;
+    user-select: none;
+}
+
 @keyframes loading {
     0% {
        transform: rotate(0deg); 
