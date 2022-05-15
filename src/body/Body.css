@@ -112,7 +112,7 @@
     margin-left: 1.5em;
 }
 
-.pointer{
+.profile-pointer{
     cursor: pointer;
     background-color: rgb(230, 230, 230);
     padding: .4em 1.2em;
@@ -121,7 +121,7 @@
     user-select: none;
 }
 
-.pointer:hover{
+.profile-pointer:hover{
     color: #0079D3;
     background-color: rgb(200, 200, 200);
 }

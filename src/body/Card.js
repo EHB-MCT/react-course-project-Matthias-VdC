@@ -22,7 +22,6 @@ export default class Card extends React.Component {
         e.target.style.display = "none";
         e.target.parentNode.parentNode.parentNode.style.maxHeight = "none";
         e.target.parentNode.parentNode.style.overflow = "visible";
-        e.removeEventListener();
     }
 
     checkText() {
@@ -61,7 +60,10 @@ export default class Card extends React.Component {
 
     showNSFW(e) {
         e.preventDefault();
-        e.target.parentNode.style.display = "none";
+        let object = e.target.parentNode.style.display;
+        object.style.display = "none";
+        object.style.backgroundColor = "none";
+        // window.getComputedStyle(object, "::after")
     }
 
     isLink() {
@@ -126,7 +128,7 @@ export default class Card extends React.Component {
                     </div>
                     <div className="flex">
                         <div className="comment-icon">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Regular" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1 fill:#41416e;</style></defs><title>comment</title><g id="comment-Regular"><path id="comment-Regular-2" data-name="comment-Regular" class="cls-1" d="M17,3.25H7A4.756,4.756,0,0,0,2.25,8V21a.75.75,0,0,0,1.28.53l2.414-2.414a1.246,1.246,0,0,1,.885-.366H17A4.756,4.756,0,0,0,21.75,14V8A4.756,4.756,0,0,0,17,3.25ZM20.25,14A3.254,3.254,0,0,1,17,17.25H6.829a2.73,2.73,0,0,0-1.945.806L3.75,19.189V8A3.254,3.254,0,0,1,7,4.75H17A3.254,3.254,0,0,1,20.25,8Z" /></g></svg>
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" id="magicoon-Regular" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1 fill:#41416e;</style></defs><title>comment</title><g id="comment-Regular"><path id="comment-Regular-2" data-name="comment-Regular" className="cls-1" d="M17,3.25H7A4.756,4.756,0,0,0,2.25,8V21a.75.75,0,0,0,1.28.53l2.414-2.414a1.246,1.246,0,0,1,.885-.366H17A4.756,4.756,0,0,0,21.75,14V8A4.756,4.756,0,0,0,17,3.25ZM20.25,14A3.254,3.254,0,0,1,17,17.25H6.829a2.73,2.73,0,0,0-1.945.806L3.75,19.189V8A3.254,3.254,0,0,1,7,4.75H17A3.254,3.254,0,0,1,20.25,8Z" /></g></svg>
                             {typeof (this.props.num_comments) === "number" ? <p>{this.props.num_comments}</p> : <p>{this.props.num_comments}k</p>}
                         </div>
                         <div className="share-icon">

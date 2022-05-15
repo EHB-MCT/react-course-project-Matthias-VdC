@@ -25,10 +25,10 @@ export default class Body extends React.Component {
         return (
             <div className="filter-container">
                 <div className="filter-subcontainer">
-                    {this.state.page === "popular" ? <p class="selected" onClick={this.fetchPopular}>Popular posts</p> : <p class="pointer" onClick={this.fetchPopular}>Popular posts</p>}
-                    {this.state.page === "controversial" ? <p class="selected" onClick={this.fetchControversial}>Controversial</p> : <p class="pointer" onClick={this.fetchControversial}>Controversial</p>}
-                    {this.state.page === "trending" ? <p class="selected" onClick={this.fetchTrending}>Trending</p> : <p class="pointer" onClick={this.fetchTrending}>Trending</p>}
-                    {this.state.page === "new" ? <p class="selected" onClick={this.fetchNew}>New</p> : <p class="pointer" onClick={this.fetchNew}>New</p>}
+                    {this.state.page === "popular" ? <p className="selected" onClick={this.fetchPopular}>Popular posts</p> : <p className="profile-pointer" onClick={this.fetchPopular}>Popular posts</p>}
+                    {this.state.page === "controversial" ? <p className="selected" onClick={this.fetchControversial}>Controversial</p> : <p className="profile-pointer" onClick={this.fetchControversial}>Controversial</p>}
+                    {this.state.page === "trending" ? <p className="selected" onClick={this.fetchTrending}>Trending</p> : <p className="profile-pointer" onClick={this.fetchTrending}>Trending</p>}
+                    {this.state.page === "new" ? <p className="selected" onClick={this.fetchNew}>New</p> : <p className="profile-pointer" onClick={this.fetchNew}>New</p>}
                 </div>
             </div >
         );
@@ -112,9 +112,7 @@ export default class Body extends React.Component {
 
         return (
             arr.map(e => {
-                console.log(e);
                 count++;
-                e.media ? console.log("yes") : console.log("no");
                 let ups = e.ups;
                 let comm_num = e.num_comments;
                 if (comm_num > 1000) {
@@ -125,8 +123,6 @@ export default class Body extends React.Component {
                     ups = ups / 1000;
                     ups = ups.toFixed(1);
                 }
-
-                console.log(e.post_hint);
 
                 return (
                     <div key={count} id="body-content-container">
