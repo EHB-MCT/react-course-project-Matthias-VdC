@@ -1,6 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
-import Card from "../body/Card";
+import SearchCard from "./SearchCard";
 
 export default class Search extends React.Component {
     constructor(props) {
@@ -39,7 +38,7 @@ export default class Search extends React.Component {
 
                 return (
                     <div key={count} id="body-content-container">
-                        <Card ups={ups} num_comments={comm_num} data={e} subreddit={e.subreddit} user={e.author} contentText={e.selftext_html} contentTitle={e.title} media={e.media} />
+                        <SearchCard ups={ups} num_comments={comm_num} data={e} subreddit={e.subreddit} user={e.author} contentText={e.selftext_html} contentTitle={e.title} media={e.media} />
                     </div>
                 );
             })

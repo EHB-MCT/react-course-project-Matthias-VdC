@@ -1,8 +1,7 @@
 import React from "react";
 
-import "./Card.css";
 
-export default class Card extends React.Component {
+export default class SearchCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
