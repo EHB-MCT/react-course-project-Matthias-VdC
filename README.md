@@ -9,3 +9,4 @@ SOURCES:
 - Get URL params in js: https://www.sitepoint.com/get-url-parameters-with-javascript/
 - All the random bugs: https://stackoverflow.com/
 - Svg's als content gebruiken in css ::after/::before elementen: https://yoksel.github.io/url-encoder/
+- Om te weten hoe sommige delen in react samenwerken: https://reactjs.org/docs/getting-started.html
