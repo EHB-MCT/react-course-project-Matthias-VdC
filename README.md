@@ -8,3 +8,4 @@ SOURCES:
 - SVG images: https://www.svgrepo.com/
 - Get URL params in js: https://www.sitepoint.com/get-url-parameters-with-javascript/
 - All the random bugs: https://stackoverflow.com/
+- Svg's als content gebruiken in css ::after/::before elementen: https://yoksel.github.io/url-encoder/
